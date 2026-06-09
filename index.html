@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibhayi Small  Business Chamber | </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+
+
+    <nav>
+        <div class="logo">
+            <img src="isbc-logo.png" alt="Logo">
+            <span class="logo-title">ISBC</span>
+          </div>
+      
+        <button class="menu-toggle" id="toggle" aria-label="Toggle menu">
+          <span>Menu</span>
+          <div class="bars">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home <i class="fa fa-angle-right"></i></a>
+            <a href="about.html">About <i class="fa fa-angle-right"></i></a>
+            <a href="gallery.html">Gallery <i class="fa fa-angle-right"></i></a>
+            <a href="contact.html">Book Now <i class="fa fa-angle-right"></i></a>
+            <div class="nav-cta-wrap">
+              <a href="membership.html" class="nav-cta">Become A Member <i class="fa-solid fa-user-group"> </i></a>
+            </div>
+          </div>
+      </nav>
+
+
+      <style>
+nav {
+  background:white;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  height: 70px;
+  position: fixed;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 4rem;
+  width: auto;
+  display: block;
+}
+
+.logo-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color:#538f3f;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #5e954c;
+  letter-spacing: 0.03em;
+}
+
+.menu-toggle .bars {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menu-toggle .bars span {
+  display: block;
+  width: 20px;
+  height: 2.5px;
+  background: #5fa349;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle.open .bars span:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+.menu-toggle.open .bars span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open .bars span:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+.nav-links {
+  display: grid;
+  grid-template-rows: 0fr;
+  flex-direction: column;
+  background: #ffffff;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  opacity: 0;
+  transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-links > * {
+  overflow: hidden;
+}
+
+.nav-links.open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.nav-links a:not(.nav-cta) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 28px;
+  padding: 18px 0;
+  color: #02162e;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.80rem;
+  border-bottom: 1px solid #e8e8e8;
+  transition: color 0.2s;
+}
+
+.nav-links a:not(.nav-cta):last-of-type {
+  border-bottom: none;
+}
+
+.nav-links a:not(.nav-cta):hover {
+  color: #5e954c;
+}
+
+.nav-links a:not(.nav-cta):hover i {
+  opacity: 1;
+  color: #c0392b;
+}
+
+.nav-links a:not(.nav-cta) i {
+  font-size: 0.9rem;
+  color: #02162e;
+  opacity: 0.4;
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.nav-cta-wrap {
+  padding: 24px 28px;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-cta {
+  background: #5e954c;
+  color: #ffffff !important;
+  padding: 13px 32px !important;
+  border-radius: 999px !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  text-decoration: none;
+  border-bottom: none !important;
+  transition: background 0.2s ease, transform 0.15s ease !important;
+  display: inline-block;
+}
+
+.nav-cta:hover {
+  background: #143908 !important;
+  transform: scale(1.03);
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-links {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 0s linear 0.45s;
+}
+
+  .nav-links a:not(.nav-cta) {
+    margin: 0;
+    padding: 0 18px;
+    color: #ffffff;
+    border-bottom: none;
+    font-size: 0.85rem;
+  }
+
+  .nav-links a:not(.nav-cta) i {
+    display: none;
+  }
+
+  .nav-links a:not(.nav-cta):hover {
+    color: #ffffff;
+    opacity: 0.75;
+  }
+
+  .nav-cta-wrap {
+    padding: 0 0 0 18px;
+  }
+
+  .nav-cta {
+    padding: 10px 22px !important;
+    font-size: 0.8rem !important;
+  }
+}
+  
+</style>
+
+
+
+
+<script>
+
+const toggle = document.getElementById('toggle');
+const navLinks = document.getElementById('navLinks');
+
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('open');
+  navLinks.classList.toggle('open');
+});
+</script>
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+
+  .hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  /* === SWAP YOUR IMAGE HERE === */
+  .hero-bg {
+    position: absolute;
+    inset: -20px;
+    background-image: url('bis-bg.jpg'); /* <-- replace this */
+    background-size: cover;
+    background-position: center;
+    filter: blur(0.80px);
+    transform: scale(1.08);
+    z-index: 0;
+  }
+
+  /* Dark overlay so text stays readable */
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, #152b0eaa 0%, rgba(6, 6, 6, 0.839) 100%);
+    z-index: 1;
+  }
+
+
+  .hero-dots {
+    position: absolute;
+    right: 5%;
+    bottom: 15%;
+    width: 150px;
+    height: 130px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    opacity: 0;
+    z-index: 2;
+    animation: fadein 0.8s ease forwards 1.2s;
+  }
+
+  .hero-dots span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(120, 80, 200, 0.5);
+    display: block;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(200, 170, 255, 0.65);
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: rise 0.6s ease forwards 0.2s;
+  }
+
+  .hero-h {
+    font-size: clamp(1.8rem, 3.8vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    max-width: 680px;
+    opacity: 0;
+    transform: translateY(18px);
+    animation: rise 0.7s ease forwards 0.45s;
+  }
+
+  .hero-h em {
+    font-style: normal;
+    color: #5e954c;
+  }
+
+  .hero-sub {
+    margin-top: 18px;
+    font-size: clamp(0.88rem, 1.4vw, 1rem);
+    color: rgba(220, 210, 255, 0.6);
+    font-weight: 400;
+    max-width: 440px;
+    line-height: 1.65;
+    opacity: 0;
+    transform: translateY(14px);
+    animation: rise 0.7s ease forwards 0.65s;
+  }
+
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+   gap:7px;
+    margin-top: 40px;
+    padding: 11px 20px;
+    align-self:center;
+    background:#5e954c;
+    color: #ffffff;
+    font-size: 0.92rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(14px);
+    animation: rise 0.7s ease forwards 0.85s;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+  .hero-cta:hover {
+    background: #f0f0f0;
+    color: #538f3f;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.4);
+  }
+
+  .hero-cta:hover svg {
+    transform: translateX(4px);
+  }
+
+  .hero-cta svg {
+    transition: transform 0.2s;
+  }
+
+  @keyframes rise {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadein {
+    to { opacity: 1; }
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.08); opacity: 1; }
+  }
+
+  @media (max-width: 600px) {
+    
+    .hero-inner { padding: 80px 24px 60px; }
+    .hero-dots { right: 16px; bottom: 36px; }
+    .hero-cta { 
+    
+        justify-content: center;
+     }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-tag, .hero-h, .hero-sub, .hero-cta, .hero-dots {
+      opacity: 1; transform: none; animation: none;
+    }
+    .hero-orb { animation: none; }
+  }
+</style>
+
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-orb"></div>
+
+
+
+  <div class="hero-inner">
+    <p class="hero-tag"></p>
+
+    <h1 class="hero-h">
+      Tech that clears the noise<br>
+      to focus on what matters:<br>
+      <em>you.</em>
+    </h1>
+
+    <p class="hero-sub">
+      Cut through complexity. Tools built around how you actually work, not the other way around.
+    </p>
+
+    <a href="#" class="hero-cta">
+      Become A Member <i class="fa-solid fa-user-group"> </i>
+    </a>
+  </div>
+</section>
+
+
+
+<div class="upcoming-event">
+    <h1></h1>
+</div>
+
+
+
+
+
+</body>
+</html>
