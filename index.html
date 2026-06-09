@@ -287,7 +287,7 @@ toggle.addEventListener('click', () => {
 
   .hero {
     position: relative;
-    min-height: 85vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -487,11 +487,65 @@ toggle.addEventListener('click', () => {
 
 
 
+
 <div class="upcoming-event">
-    <h1></h1>
-</div>
+    <div class="marquee-wrapper">
+      <div class="marquee-track" id="marquee-track">
+        <span>New upcoming event &nbsp;4 Jun 2026 <i class="fa fa-angle-right"></i></span>
+      </div>
+    </div>
+  </div>
 
 
+<style>
+.upcoming-event {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee-wrapper {
+  animation: bg-cycle 6s steps(1) infinite;
+}
+
+.marquee-track {
+  display: flex;
+  padding: 13px 0;
+  width: max-content;
+}
+
+.marquee-track span {
+  white-space: nowrap;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  padding: 0 48px;
+}
+
+@keyframes bg-cycle {
+  0%,  33%  { background: linear-gradient(135deg, #0d391e 0%, #1a7a3c 50%, #0e4926 100%); }
+  34%, 66%  { background: linear-gradient(135deg, #042d12 0%, #1c7637 50%, #1a7a3c 100%); }
+  67%, 100% { background: linear-gradient(135deg, #122719 0%, #0a2010 50%, #084119 100%); }
+}
+
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+</style>
+
+
+<script>
+    const track = document.getElementById('marquee-track');
+const original = track.innerHTML;
+
+// Clone until track is at least 2x the screen width
+while (track.scrollWidth < window.innerWidth * 2) {
+  track.innerHTML += original;
+}
+
+// Now apply the animation
+track.style.animation = 'scroll-left 13s linear infinite';
+    </script>
 
 
 
