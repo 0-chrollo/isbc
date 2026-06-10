@@ -533,19 +533,6 @@ toggle.addEventListener('click', () => {
 </style>
 
 
-<script>
-    const track = document.getElementById('marquee-track');
-const original = track.innerHTML;
-
-// Clone until track is at least 2x the screen width
-while (track.scrollWidth < window.innerWidth * 2) {
-  track.innerHTML += original;
-}
-
-// Now apply the animation
-track.style.animation = 'scroll-left 13s linear infinite';
-    </script>
-
 
 
 
@@ -1556,12 +1543,92 @@ track.style.animation = 'scroll-left 13s linear infinite';
 
 
 
-<section>
 
-</section>
+    
+      <style>
+  
+    
+        .best-worlds-section{
+          width:100%;
+          padding:10px 30px;
+          background:#d9d9d9;
+        }
+    
+        .content{
+          max-width:700px;
+        }
+    
+        .content h1{
+          font-size:25px;
+          font-weight:700;
+          color:#51853f;
+          margin-bottom:25px;
+          line-height:1.1;
+        }
+    
+        .content p{
+          font-size:16px;
+          color:#1e1e1e;
+          line-height:1.8;
+          max-width:650px;
+          margin-bottom:40px;
+        }
+    
+        .discover-btn{
+          display:inline-block;
+          background:#5e954c;
+          color:#fff;
+          border-radius: 25px;
+          text-decoration:none;
+          padding:14px 30px;
+          font-size:15px;
+          font-weight:600;
+          transition:0.3s ease;
+        }
+    
+        .discover-btn:hover{
+          background:#111827;
+        }
+    
+        @media(max-width:768px){
+    
+          .best-worlds-section{
+            padding:10px 25px;
+          }
+    
+          .content h1{
+            font-size:25px;
+          }
+    
+          .content p{
+            font-size:15px;
+          }
+    
+          .discover-btn{
+            padding:10px 20px;
+            border-radius: 20px;
+            font-size:14px;
+          }
+        }
+      </style>
+ 
+    
+      <section class="best-worlds-section">
+    
+        <div class="content">
+          <h1>Best of All Worlds</h1>
+    
+          <p>
+            Throughout our journey we have listened to and worked with thousands of families to help them live their best life.
+          </p>
+    
+          <a href="#" class="discover-btn">Contact us</a>
+        </div>
+    
+      </section>
+  
 
 
-
-
+<script src="scripts.js"></script>
 </body>
 </html>
