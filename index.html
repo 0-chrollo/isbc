@@ -29,11 +29,11 @@
       
         <div class="nav-links" id="navLinks">
             <a href="index.html">Home <i class="fa fa-angle-right"></i></a>
-            <a href="about.html">About <i class="fa fa-angle-right"></i></a>
-            <a href="gallery.html">Gallery <i class="fa fa-angle-right"></i></a>
+            <a href="#about">About <i class="fa fa-angle-right"></i></a>
+            <a href="#Gallery">Gallery <i class="fa fa-angle-right"></i></a>
             <a href="contact.html">Book Now <i class="fa fa-angle-right"></i></a>
             <div class="nav-cta-wrap">
-              <a href="membership.html" class="nav-cta">Become A Member <i class="fa-solid fa-user-group"> </i></a>
+              <a href="#MEMBERSHIP" class="nav-cta">Become A Member <i class="fa-solid fa-user-group"> </i></a>
             </div>
           </div>
       </nav>
@@ -462,7 +462,6 @@ toggle.addEventListener('click', () => {
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
-  <div class="hero-orb"></div>
 
 
 
@@ -577,8 +576,12 @@ track.style.animation = 'scroll-left 13s linear infinite';
 
   <style>
 
+.about-us{
+    background:white;
 
+}
     .about {
+       
       max-width: 1100px;
       margin: 0 auto;
       padding: 50px 35px;
@@ -687,10 +690,11 @@ track.style.animation = 'scroll-left 13s linear infinite';
       }
     }
   </style>
+ 
 
+ <section class="about-us">
 
-  <section class="about">
-
+  <div class="about">
     <!-- LEFT -->
     <div class="about__left">
       <p class="about__label">About Us</p>
@@ -720,8 +724,9 @@ track.style.animation = 'scroll-left 13s linear infinite';
         <span class="green">community</span> behind it.
       </p>
     </div>
+</div>
 
-  </section>
+</section>
 
 
 
@@ -1336,6 +1341,222 @@ track.style.animation = 'scroll-left 13s linear infinite';
 
 </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+
+  .invest {
+  
+    padding: 90px 40px 100px;
+  }
+
+  .invest-bg {
+    position:fixed;
+    inset: 0;
+    background-image: url('bis-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px) brightness(0.2);
+    z-index: -1;
+  }
+
+  .invest-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .invest-header {
+    max-width: 660px;
+    margin-bottom: 60px;
+  }
+
+  .invest-header h1 {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 18px;
+    letter-spacing: -0.5px;
+  }
+
+  .invest-header p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.717);
+    margin-bottom: 32px;
+  }
+
+  .invest-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #75ed4e54;
+    color: #fff;
+    border: 1.5px solid rgba(255,255,255,0.55);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .invest-btn:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: #fff;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .card {
+    background: #6dc3507b;
+    border: 1px solid rgba(255,255,255,0.07);
+    padding: 40px 36px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .lines {
+    position: absolute;
+    right: -10px;
+    bottom: -10px;
+    width: 220px;
+    height: 180px;
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+  .card h2 {
+    font-size: clamp(20px, 2.2vw, 26px);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 14px;
+    letter-spacing: -0.3px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card p {
+    font-size: 14px;
+    line-height: 1.85;
+    color: rgba(255,255,255,0.55);
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 680px) {
+    .invest { padding: 60px 20px 70px; }
+    .cards { grid-template-columns: 1fr; }
+    .card { padding: 30px 24px; }
+  }
+</style>
+
+
+<section class="invest">
+  <div class="invest-bg"></div>
+  <div class="invest-inner">
+
+    <div class="invest-header">
+      <h1>How we invest</h1>
+      <p>Our academically driven approach guides us at every point in the investment process. It enables us to focus on financial science to build strategies that emphasise factors of the market that research shows have delivered higher returns over time.</p>
+      <a href="#" class="invest-btn">Our investment philosophy</a>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <svg class="lines" viewBox="0 0 220 180" fill="none">
+          <line x1="220" y1="180" x2="0"   y2="30"  stroke="#c0392b" stroke-width="1"/>
+          <line x1="220" y1="180" x2="30"  y2="60"  stroke="#c0392b" stroke-width="1"/>
+          <line x1="220" y1="180" x2="70"  y2="90"  stroke="#c0392b" stroke-width="1"/>
+          <line x1="220" y1="180" x2="110" y2="120" stroke="#c0392b" stroke-width="1"/>
+          <line x1="220" y1="180" x2="155" y2="155" stroke="#c0392b" stroke-width="1"/>
+        </svg>
+        <h2>Research</h2>
+        <p>The funds we deploy apply rigorous research, leveraging academic insights and quantitative models to uncover market inefficiencies and identify robust investment opportunities.</p>
+      </div>
+
+      <div class="card">
+        <svg class="lines" viewBox="0 0 220 180" fill="none">
+          <line x1="220" y1="180" x2="0"   y2="30"  stroke="#c0392b" stroke-width="1"/>
+          <line x1="220" y1="180" x2="30"  y2="60"  stroke="#c0392b" stroke-width="1"/>
+          <line x1="220" y1="180" x2="70"  y2="90"  stroke="#c0392b" stroke-width="1"/>
+          <line x1="220" y1="180" x2="110" y2="120" stroke="#c0392b" stroke-width="1"/>
+          <line x1="220" y1="180" x2="155" y2="155" stroke="#c0392b" stroke-width="1"/>
+        </svg>
+        <h2>Application</h2>
+        <p>Next, we apply these insights by constructing diversified portfolios tailored to each client's specific goals and risk profile, ensuring alignment with long-term financial objectives.</p>
+      </div>
+
+      <div class="card">
+        <svg class="lines" viewBox="0 0 220 180" fill="none">
+          <line x1="220" y1="180" x2="0"   y2="30"  stroke="#c0392b" stroke-width="1"/>
+          <line x1="220" y1="180" x2="30"  y2="60"  stroke="#c0392b" stroke-width="1"/>
+          <line x1="220" y1="180" x2="70"  y2="90"  stroke="#c0392b" stroke-width="1"/>
+          <line x1="220" y1="180" x2="110" y2="120" stroke="#c0392b" stroke-width="1"/>
+          <line x1="220" y1="180" x2="155" y2="155" stroke="#c0392b" stroke-width="1"/>
+        </svg>
+        <h2>Implementation</h2>
+        <p>Finally, we focus on meticulous implementation, utilising bespoke technology and best practice to execute strategies tax-efficiently and cost-effectively for superior outcomes.</p>
+      </div>
+
+      <div class="card">
+        <svg class="lines" viewBox="0 0 220 180" fill="none">
+          <line x1="220" y1="180" x2="0"   y2="30"  stroke="#c0392b" stroke-width="1"/>
+          <line x1="220" y1="180" x2="30"  y2="60"  stroke="#c0392b" stroke-width="1"/>
+          <line x1="220" y1="180" x2="70"  y2="90"  stroke="#c0392b" stroke-width="1"/>
+          <line x1="220" y1="180" x2="110" y2="120" stroke="#c0392b" stroke-width="1"/>
+          <line x1="220" y1="180" x2="155" y2="155" stroke="#c0392b" stroke-width="1"/>
+        </svg>
+        <h2>Monitoring</h2>
+        <p>We continuously monitor every portfolio, rebalancing positions as markets evolve to ensure your strategy remains on track, risk-controlled, and aligned with your goals at every stage.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 
 
