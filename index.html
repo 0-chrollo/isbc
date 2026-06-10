@@ -652,7 +652,7 @@ track.style.animation = 'scroll-left 13s linear infinite';
     }
 
     .about__body {
-      font-size: 1.2rem;
+      font-size: 1rem;
       line-height: 1.9;
       color: #000000;
     }
@@ -737,6 +737,604 @@ track.style.animation = 'scroll-left 13s linear infinite';
 
 
 
+
+
+
+
+<section class="members-area">
+
+
+ 
+    <style>
+    /* ============================================================
+       ISBC MEMBERS SECTION — all selectors scoped to .isbc-members
+       ============================================================ */
+    
+    .isbc-members {
+      padding: 72px 0 80px;
+      background:#6daa58;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .isbc-members * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .isbc-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    /* ── HEADER ─────────────────────────────────────── */
+    .isbc-header {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+    
+    .isbc-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+    
+    .isbc-eyebrow i { font-size: 10px; }
+    
+    .isbc-title {
+      font-size: clamp(26px, 4.5vw, 40px);
+      font-weight: 800;
+      color: #0d1f14;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+    
+    .isbc-title span { color: #ffffff; }
+    
+    .isbc-subtitle {
+      font-size: 15px;
+      color: #e3e3e3;
+      max-width: 460px;
+      line-height: 1.65;
+      margin: 0 auto;
+    }
+    
+    /* ── SLIDER SHELL ───────────────────────────────── */
+    .isbc-slider-wrap {
+      position: relative;
+    }
+    
+    .isbc-track-outer {
+      overflow: hidden;
+      border-radius: 4px;
+      padding: 8px 0 4px;
+      /* allow card box-shadow to show on top/bottom */
+      margin: -8px 0 -4px;
+      padding: 8px 0 4px;
+    }
+    
+    .isbc-track {
+      display: flex;
+      gap: 20px;
+      transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+      cursor: grab;
+      user-select: none;
+    }
+    
+    .isbc-track.isbc-dragging {
+      cursor: grabbing;
+      transition: none;
+    }
+    
+    /* ── CARDS ──────────────────────────────────────── */
+    .isbc-card {
+      flex: 0 0 var(--isbc-card-w, 320px);
+      width: var(--isbc-card-w, 320px);
+      background: #fff;
+      border-radius: 5px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    
+    .isbc-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 32px rgba(0,0,0,0.13);
+    }
+    
+    .isbc-card-img {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    
+    .isbc-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+      pointer-events: none;
+    }
+    
+    .isbc-card:hover .isbc-card-img img {
+      transform: scale(1.04);
+    }
+    
+    .isbc-card-body {
+      padding: 18px 18px 14px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .isbc-card-name {
+      font-size: 17px;
+      font-weight: 700;
+      color:#397f2c;
+      line-height: 1.3;
+    }
+    
+    .isbc-card-desc {
+      font-size: 13px;
+      color: #7a8c7a;
+      line-height: 1.6;
+      flex: 1;
+    }
+    
+    .isbc-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 20px;
+      width: fit-content;
+      margin-top: 4px;
+    }
+    
+    .isbc-badge i { font-size: 8px; }
+    .isbc-badge.open  { background: #e8f7ee; color: #166534; }
+    .isbc-badge.closed { background: #fef2f2; color: #991b1b; }
+    
+    .isbc-card-foot {
+      border-top: 1px solid #f0f2f0;
+    }
+    
+    .isbc-view-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 14px 20px;
+      background: #505854;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.2px;
+      transition: background 0.2s;
+    }
+    
+    .isbc-view-btn:hover { background: #1a7a52; }
+    .isbc-view-btn i { font-size: 13px; opacity: 0.85; }
+    
+    /* ── NAV ARROWS (desktop only) ──────────────────── */
+    .isbc-nav-btn {
+      display: none;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      background: #fff;
+      color: #0d2b1e;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      transition: background 0.2s, color 0.2s, opacity 0.2s;
+      z-index: 10;
+    }
+    
+    .isbc-nav-btn:hover {
+      background: #1a7a52;
+      color: #fff;
+    }
+    
+    .isbc-nav-btn.isbc-prev { left: -22px; }
+    .isbc-nav-btn.isbc-next { right: -22px; }
+    
+    .isbc-nav-btn:disabled {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+    
+    /* ── PROGRESS BAR ───────────────────────────────── */
+    .isbc-progress-track {
+      width: 100%;
+      height: 6px;
+      background: #ececec;
+      border-radius: 2px;
+      overflow: hidden;
+      margin-top: 24px;
+    }
+    
+    .isbc-progress-fill {
+      height: 100%;
+      background: #1a7a52;
+      border-radius: 2px;
+      transition: width 0.35s ease;
+      width: 0%;
+    }
+    
+    /* ── CTA BUTTON ─────────────────────────────────── */
+    .isbc-cta-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 28px;
+    }
+    
+    .isbc-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 14px 34px;
+      background:#ffffff;
+      color: #427432;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      letter-spacing: 0.2px;
+      transition: background 0.2s, transform 0.2s;
+    }
+    
+    .isbc-cta-btn:hover {
+      background: #1a7a52;
+      transform: translateY(-2px);
+    }
+    
+    .isbc-cta-btn i { font-size: 13px; opacity: 0.85; }
+    
+    /* ── RESPONSIVE ─────────────────────────────────── */
+    @media (min-width: 1024px) {
+      .isbc-nav-btn { display: inline-flex; }
+    }
+    
+    @media (max-width: 1023px) and (min-width: 580px) {
+      .isbc-members { padding: 60px 0 72px; }
+    }
+    
+    @media (max-width: 579px) {
+      .isbc-members { padding: 48px 0 60px; }
+      .isbc-wrap { padding: 0 16px; }
+      .isbc-card-img { height: 170px; }
+      .isbc-card-name { font-size: 15px; }
+      .isbc-card-desc { font-size: 12px; }
+    }
+    </style>
+
+    
+    <!-- ============================================================
+         ISBC MEMBERS SECTION
+         Drop this entire block into your page. It is fully self-contained.
+         ============================================================ -->
+    <section class="isbc-members">
+      <div class="isbc-wrap">
+    
+        <!-- HEADER -->
+        <div class="isbc-header">
+       
+          <h2 class="isbc-title">The Businesses <span>Behind ISBC</span></h2>
+          <p class="isbc-subtitle">Meet the proud member businesses representing the Nelson Mandela Bay small business community.</p>
+        </div>
+    
+        <!-- SLIDER -->
+        <div class="isbc-slider-wrap">
+    
+          <!-- Prev / Next arrows (shown on desktop via CSS) -->
+          <button class="isbc-nav-btn isbc-prev" id="isbcPrev" aria-label="Previous">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="isbc-nav-btn isbc-next" id="isbcNext" aria-label="Next">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+    
+          <div class="isbc-track-outer" id="isbcOuter">
+            <div class="isbc-track" id="isbcTrack">
+    
+              <!-- CARD 1 -->
+              <div class="isbc-card">
+                <div class="isbc-card-img">
+                  <img src="https://picsum.photos/seed/fleettracking/500/320" alt="Wizedrive Tracking" draggable="false">
+                </div>
+                <div class="isbc-card-body">
+                  <h3 class="isbc-card-name">Wizedrive Tracking</h3>
+                  <p class="isbc-card-desc">Real-time GPS fleet tracking technology providing superior products and services across the Eastern Cape.</p>
+                  <span class="isbc-badge open"><i class="fa-solid fa-circle"></i> Now Open</span>
+                </div>
+                <div class="isbc-card-foot">
+                  <a href="#" class="isbc-view-btn">View Business <i class="fa-solid fa-magnifying-glass"></i></a>
+                </div>
+              </div>
+    
+              <!-- CARD 2 -->
+              <div class="isbc-card">
+                <div class="isbc-card-img">
+                  <img src="https://picsum.photos/seed/artmurals/500/320" alt="AnniP Art" draggable="false">
+                </div>
+                <div class="isbc-card-body">
+                  <h3 class="isbc-card-name">AnniP Art</h3>
+                  <p class="isbc-card-desc">Wall murals, digital graphic designs and custom crafts — bringing bold creative vision to the Bay area.</p>
+                  <span class="isbc-badge open"><i class="fa-solid fa-circle"></i> Now Open</span>
+                </div>
+                <div class="isbc-card-foot">
+                  <a href="#" class="isbc-view-btn">View Business <i class="fa-solid fa-magnifying-glass"></i></a>
+                </div>
+              </div>
+    
+              <!-- CARD 3 -->
+              <div class="isbc-card">
+                <div class="isbc-card-img">
+                  <img src="https://picsum.photos/seed/shuttlebus/500/320" alt="Sunflower M3 Travel" draggable="false">
+                </div>
+                <div class="isbc-card-body">
+                  <h3 class="isbc-card-name">Sunflower M3 Travel &amp; Shuttle</h3>
+                  <p class="isbc-card-desc">A family-owned shuttle and travel service based in the heart of Port Elizabeth, Eastern Cape.</p>
+                  <span class="isbc-badge closed"><i class="fa-solid fa-circle"></i> Closed</span>
+                </div>
+                <div class="isbc-card-foot">
+                  <a href="#" class="isbc-view-btn">View Business <i class="fa-solid fa-magnifying-glass"></i></a>
+                </div>
+              </div>
+    
+              <!-- CARD 4 -->
+              <div class="isbc-card">
+                <div class="isbc-card-img">
+                  <img src="https://picsum.photos/seed/radiostudio/500/320" alt="KingFisher FM" draggable="false">
+                </div>
+                <div class="isbc-card-body">
+                  <h3 class="isbc-card-name">KingFisher FM</h3>
+                  <p class="isbc-card-desc">Community radio station and proud media sponsor of the iBhayi Small Business Chamber.</p>
+                  <span class="isbc-badge open"><i class="fa-solid fa-circle"></i> Now Open</span>
+                </div>
+                <div class="isbc-card-foot">
+                  <a href="#" class="isbc-view-btn">View Business <i class="fa-solid fa-magnifying-glass"></i></a>
+                </div>
+              </div>
+    
+              <!-- CARD 5 -->
+              <div class="isbc-card">
+                <div class="isbc-card-img">
+                  <img src="https://picsum.photos/seed/wellnessclinic/500/320" alt="Bay Health Solutions" draggable="false">
+                </div>
+                <div class="isbc-card-body">
+                  <h3 class="isbc-card-name">Bay Health Solutions</h3>
+                  <p class="isbc-card-desc">Holistic health and wellness services for businesses and individuals across the Nelson Mandela Bay region.</p>
+                  <span class="isbc-badge closed"><i class="fa-solid fa-circle"></i> Closed</span>
+                </div>
+                <div class="isbc-card-foot">
+                  <a href="#" class="isbc-view-btn">View Business <i class="fa-solid fa-magnifying-glass"></i></a>
+                </div>
+              </div>
+    
+              <!-- CARD 6 -->
+              <div class="isbc-card">
+                <div class="isbc-card-img">
+                  <img src="https://picsum.photos/seed/techoffice/500/320" alt="PE Tech Solutions" draggable="false">
+                </div>
+                <div class="isbc-card-body">
+                  <h3 class="isbc-card-name">PE Tech Solutions</h3>
+                  <p class="isbc-card-desc">IT support, software development and digital transformation for small businesses across the Eastern Cape.</p>
+                  <span class="isbc-badge open"><i class="fa-solid fa-circle"></i> Now Open</span>
+                </div>
+                <div class="isbc-card-foot">
+                  <a href="#" class="isbc-view-btn">View Business <i class="fa-solid fa-magnifying-glass"></i></a>
+                </div>
+              </div>
+    
+            </div><!-- /isbc-track -->
+          </div><!-- /isbc-track-outer -->
+        </div><!-- /isbc-slider-wrap -->
+    
+        <!-- PROGRESS -->
+        <div class="isbc-progress-track">
+          <div class="isbc-progress-fill" id="isbcFill"></div>
+        </div>
+    
+        <!-- CTA -->
+        <div class="isbc-cta-wrap">
+          <a href="#apply" class="isbc-cta-btn">
+            Become A Member <i class="fa-solid fa-user-group"></i>
+          </a>
+        </div>
+    
+      </div>
+    </section>
+    
+    <script>
+    (function () {
+      'use strict';
+    
+      var GAP = 20;
+      var outer  = document.getElementById('isbcOuter');
+      var track  = document.getElementById('isbcTrack');
+      var fill   = document.getElementById('isbcFill');
+      var btnPrev = document.getElementById('isbcPrev');
+      var btnNext = document.getElementById('isbcNext');
+      var cards  = track.querySelectorAll('.isbc-card');
+      var total  = cards.length;
+      var currentIndex = 0;
+      var cardW  = 0;
+      var visible = 1;
+    
+      /* ── Card width based on viewport ── */
+      function getCardW() {
+        var ow = outer.offsetWidth;
+        if (ow >= 960)  return Math.floor((ow - GAP * 2) / 3);   // 3 up
+        if (ow >= 560)  return Math.floor((ow - GAP) / 2.08);    // 2+ peek
+        return Math.floor(ow * 0.88);                             // 1+ peek
+      }
+    
+      function getVisible() {
+        var ow = outer.offsetWidth;
+        if (ow >= 960) return 3;
+        if (ow >= 560) return 2;
+        return 1;
+      }
+    
+      function applyCardWidths() {
+        cardW   = getCardW();
+        visible = getVisible();
+        cards.forEach(function (c) {
+          c.style.setProperty('--isbc-card-w', cardW + 'px');
+          c.style.flex = '0 0 ' + cardW + 'px';
+          c.style.width = cardW + 'px';
+        });
+      }
+    
+      /* ── Clamp index so last "page" always fills the view ── */
+      function maxIndex() {
+        return Math.max(0, total - visible);
+      }
+    
+      function goTo(idx, animate) {
+        idx = Math.max(0, Math.min(idx, maxIndex()));
+        currentIndex = idx;
+    
+        if (animate === false) {
+          track.style.transition = 'none';
+        } else {
+          track.style.transition = 'transform 0.42s cubic-bezier(0.4,0,0.2,1)';
+        }
+    
+        var offset = idx * (cardW + GAP);
+        track.style.transform = 'translateX(-' + offset + 'px)';
+    
+        /* progress */
+        var pct = total <= visible ? 100 : (idx / maxIndex()) * 100;
+        fill.style.width = Math.min(100, pct) + '%';
+    
+        /* arrow states */
+        btnPrev.disabled = idx === 0;
+        btnNext.disabled = idx >= maxIndex();
+      }
+    
+      /* ── Init & resize ── */
+      function init() {
+        applyCardWidths();
+        goTo(currentIndex, false);
+      }
+    
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
+          var prev = currentIndex;
+          applyCardWidths();
+          goTo(Math.min(prev, maxIndex()), false);
+        }, 80);
+      });
+    
+      /* ── Arrow buttons ── */
+      btnPrev.addEventListener('click', function () { goTo(currentIndex - 1); });
+      btnNext.addEventListener('click', function () { goTo(currentIndex + 1); });
+    
+      /* ── Touch / mouse drag ── */
+      var dragStart = 0;
+      var dragCurrent = 0;
+      var isDragging = false;
+      var startOffset = 0;
+    
+      function onDragStart(clientX) {
+        isDragging = true;
+        dragStart = clientX;
+        startOffset = currentIndex * (cardW + GAP);
+        track.classList.add('isbc-dragging');
+        track.style.transition = 'none';
+      }
+    
+      function onDragMove(clientX) {
+        if (!isDragging) return;
+        dragCurrent = clientX;
+        var delta = dragCurrent - dragStart;
+        var offset = startOffset - delta;
+        var maxOff = maxIndex() * (cardW + GAP);
+        /* rubber-band at edges */
+        if (offset < 0)       offset = offset * 0.25;
+        if (offset > maxOff)  offset = maxOff + (offset - maxOff) * 0.25;
+        track.style.transform = 'translateX(-' + offset + 'px)';
+      }
+    
+      function onDragEnd() {
+        if (!isDragging) return;
+        isDragging = false;
+        track.classList.remove('isbc-dragging');
+        var delta = dragCurrent - dragStart;
+        var threshold = cardW * 0.2;
+        if (delta < -threshold) {
+          goTo(currentIndex + 1);
+        } else if (delta > threshold) {
+          goTo(currentIndex - 1);
+        } else {
+          goTo(currentIndex); /* snap back */
+        }
+      }
+    
+      /* mouse */
+      track.addEventListener('mousedown',  function (e) { onDragStart(e.clientX); });
+      window.addEventListener('mousemove', function (e) { onDragMove(e.clientX); });
+      window.addEventListener('mouseup',   onDragEnd);
+    
+      /* touch */
+      track.addEventListener('touchstart', function (e) { onDragStart(e.touches[0].clientX); }, { passive: true });
+      track.addEventListener('touchmove',  function (e) { onDragMove(e.touches[0].clientX); },  { passive: true });
+      track.addEventListener('touchend',   onDragEnd);
+    
+      /* prevent link-click after drag */
+      track.addEventListener('click', function (e) {
+        if (Math.abs(dragCurrent - dragStart) > 8) e.preventDefault();
+      });
+    
+      /* ── Keyboard ── */
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft')  goTo(currentIndex - 1);
+        if (e.key === 'ArrowRight') goTo(currentIndex + 1);
+      });
+    
+      /* ── Boot ── */
+      init();
+    })();
+    </script>
+
+
+
+</section>
 
 
 
