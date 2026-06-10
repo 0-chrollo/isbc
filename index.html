@@ -1551,7 +1551,7 @@ toggle.addEventListener('click', () => {
         .best-worlds-section{
           width:100%;
           padding:10px 30px;
-          background:#d9d9d9;
+          background:#ffffff;
         }
     
         .content{
@@ -1627,6 +1627,291 @@ toggle.addEventListener('click', () => {
     
       </section>
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <style>
+
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: #5e954c;
+      color: #fff;
+      padding: 48px 32px 0;
+    }
+
+    .ft-inner {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    /* --- Logo --- */
+    .ft-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      margin-bottom: 28px;
+    }
+
+    .ft-logo img,
+    .ft-logo .ft-logo-placeholder {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    /* Placeholder if no real logo yet */
+    .ft-logo-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+     
+      border-radius: 6px;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+    }
+
+    .ft-logo-wordmark {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ft-logo-wordmark strong {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+    }
+
+    .ft-logo-wordmark span {
+      font-size: 0.72rem;
+      color: #f3f3f3;
+      line-height: 1.4;
+      max-width: 200px;
+    }
+
+    /* --- Social icons (bare, like the reference) --- */
+    .ft-social {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin-bottom: 44px;
+    }
+
+    .ft-social a {
+      color: #fff;
+      font-size: 1.35rem;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .ft-social a:hover { opacity: 0.7; }
+
+    /* --- 2-column grid (matches reference exactly) --- */
+    .ft-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 40px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 40px;
+    }
+
+    /* Each section block */
+    .ft-section {
+      margin-bottom: 44px;
+    }
+
+    .ft-section-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 22px;
+      line-height: 1.2;
+    }
+
+    .ft-section ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .ft-section ul li a {
+      font-size: 0.97rem;
+      color: #ebebeb;
+      text-decoration: none;
+      line-height: 1.3;
+      transition: color 0.2s;
+    }
+
+    .ft-section ul li a:hover { color: #fff; }
+
+    /* Bordered "Become a Member" button */
+    .ft-btn-member {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 9px 18px;
+      border: 1.5px solid #c5d4ed;
+      background-color: white;
+      border-radius: 20px;
+      
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+
+    .ft-btn-member:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: #fff;
+      color: #fff;
+    }
+
+    /* --- Bottom bar --- */
+    .ft-bottom {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding: 18px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .ft-copy {
+      font-size: 0.78rem;
+      color: #f7f7f7;
+    }
+
+    .ft-bottom-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .ft-bottom-links a {
+      font-size: 0.78rem;
+      color: #c4c4c4;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .ft-bottom-links a:hover { color: #c5d4ed; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 520px) {
+      .site-footer { padding: 40px 16px 0; }
+
+      .ft-grid {
+        grid-template-columns: 1fr 1fr; /* stays 2 columns on mobile */
+        gap: 0 20px;
+      }
+
+      .ft-section-title { font-size: 0.92rem; }
+
+      .ft-section ul li a { font-size: 0.85rem; }
+
+      .ft-btn-member { font-size: 0.78rem; padding: 8px 12px; }
+
+      .ft-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+
+
+<footer class="site-footer">
+  <div class="ft-inner">
+
+    <!-- Logo — swap .ft-logo-placeholder for <img> when you have the real asset -->
+    <a href="#" class="ft-logo">
+      <div class="ft-logo-placeholder"><img src="isbc-logo.png"></div>
+      <div class="ft-logo-wordmark">
+        <strong>ISBC</strong>
+        <span>iBhayi Small Business Chamber</span>
+      </div>
+    </a>
+
+    <!-- Social icons: Facebook, Instagram, WhatsApp (bare, no circles) -->
+    <div class="ft-social">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <!-- 2-column link grid -->
+    <div class="ft-grid">
+
+      <!-- Col 1 Row 1: HQ / Contact -->
+      <div class="ft-section">
+        <p class="ft-section-title">Gqeberha HQ</p>
+        <ul>
+          <li><a href="#">Gqeberha</a></li>
+          <li><a href="#">Eastern Cape</a></li>
+          <li><a href="mailto:info@isbc.co.za">info@isbc.net.za</a></li>
+          <li><a href="tel:+27410000000">+27 41 000 0000</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 2 Row 1: About Us -->
+  
+
+      <!-- Col 1 Row 2: Quick Links -->
+      <div class="ft-section">
+        <p class="ft-section-title">Quick Links</p>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Membership</a></li>
+          <li><a href="#">Events</a></li>
+  
+        </ul>
+      </div>
+
+      <!-- Col 2 Row 2: Get Involved -->
+      <div class="ft-section">
+        <p class="ft-section-title">Get Involved</p>
+        <ul>
+          <li><a href="#">Membership Packages</a></li>
+          <li><a href="#">Events</a></li>
+          <li>
+            <a href="#" class="ft-btn-member" style="color:#3f6b30;">Become A Member</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="ft-bottom">
+      <p class="ft-copy">&copy; 2026 iBhayi Small Business Chamber. All rights reserved.</p>
+      <div class="ft-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
 
 
 <script src="scripts.js"></script>
