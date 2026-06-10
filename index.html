@@ -549,5 +549,198 @@ track.style.animation = 'scroll-left 13s linear infinite';
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <style>
+
+
+    .about {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 50px 35px;
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* ── LEFT ── */
+    .about__left {
+      flex: 0 0 38%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 28px;
+      padding-right: 48px;
+    }
+
+    .about__label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #999;
+    }
+
+    .about__heading {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.15;
+      color: #111;
+    }
+
+    .about__heading .green {
+      color: #006937;
+    }
+
+    .about__partner {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .about__partner-text {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #555;
+    }
+
+    .about__partner-img {
+      width: 65px;
+      height: 55px;
+      border-radius: 5px;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* ── DIVIDER ── */
+    .about__divider {
+      width: 1px;
+      align-self: stretch;
+      background: #f9f9f9;
+      flex-shrink: 0;
+    }
+
+    /* ── RIGHT ── */
+    .about__right {
+      flex: 1;
+      padding-left: 48px;
+    }
+
+    .about__body {
+      font-size: 1.2rem;
+      line-height: 1.9;
+      color: #000000;
+    }
+
+    .about__body .green {
+      color: #006937;
+      font-weight: 600;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 640px) {
+      .about {
+        flex-direction: column;
+        padding: 35px 20px;
+        gap: 34px;
+      }
+
+      .about__left {
+        flex: none;
+        width: 100%;
+        padding-right: 0;
+      }
+
+      .about__divider {
+        width: 100%;
+        height: 1px;
+        align-self: auto;
+      }
+
+      .about__right {
+        padding-left: 0;
+      }
+    }
+  </style>
+
+
+  <section class="about">
+
+    <!-- LEFT -->
+    <div class="about__left">
+      <p class="about__label">About Us</p>
+      <h2 class="about__heading">
+        iBhayi <span class="green">Small Business</span><br>Chamber
+      </h2>
+      <div class="about__partner">
+        <span class="about__partner-text">Our Partner</span>
+        <img src="fnblogo.png" alt="FNB" class="about__partner-img" />
+      </div>
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="about__divider"></div>
+
+    <!-- RIGHT -->
+    <div class="about__right">
+      <p class="about__body">
+        We are a <span class="green">small business chamber</span> dedicated to
+        supporting and uplifting entrepreneurs across the
+        <span class="green">Nelson Mandela Bay</span> region. Our mission is to
+        help small businesses <span class="green">network</span>, collaborate,
+        and access the resources they need to succeed. Whether you are just
+        starting out or looking to <span class="green">grow your business</span>,
+        we connect you with the right people, the right opportunities, and the
+        right support because every business deserves a
+        <span class="green">community</span> behind it.
+      </p>
+    </div>
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
