@@ -816,15 +816,16 @@ toggle.addEventListener('click', () => {
 
     .isbc-card-img {
       width: 100%;
-      height: 200px;
+      height: 250px;
       overflow: hidden;
       flex-shrink: 0;
     }
 
     .isbc-card-img img {
+        background-color: #505653;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit:contain;
       display: block;
       transition: transform 0.4s ease;
       pointer-events: none;
@@ -978,7 +979,7 @@ toggle.addEventListener('click', () => {
     @media (max-width: 579px) {
       .isbc-members { padding: 48px 0 60px; }
       .isbc-wrap    { padding: 0 16px; }
-      .isbc-card-img  { height: 170px; }
+      .isbc-card-img  { height: 185px; }
       .isbc-card-name { font-size: 15px; }
       .isbc-card-desc { font-size: 12px; }
     }
@@ -1005,7 +1006,7 @@ toggle.addEventListener('click', () => {
         <div class="isbc-track" id="isbcTrack">
 
           <div class="isbc-card">
-            <div class="isbc-card-img"><img src="https://picsum.photos/seed/fleettracking/500/320" alt="Wizedrive Tracking" draggable="false"></div>
+            <div class="isbc-card-img"><img src="members/wizedr.jpg" alt="Wizedrive Tracking" draggable="false"></div>
             <div class="isbc-card-body">
               <h3 class="isbc-card-name">Wizedrive Tracking</h3>
               <p class="isbc-card-desc">Real-time GPS fleet tracking technology providing superior products and services across the Eastern Cape.</p>
@@ -1015,17 +1016,17 @@ toggle.addEventListener('click', () => {
           </div>
 
           <div class="isbc-card">
-            <div class="isbc-card-img"><img src="https://picsum.photos/seed/artmurals/500/320" alt="AnniP Art" draggable="false"></div>
+            <div class="isbc-card-img"><img src="members/annip.png" alt="AnniP Art" draggable="false"></div>
             <div class="isbc-card-body">
               <h3 class="isbc-card-name">AnniP Art</h3>
-              <p class="isbc-card-desc">Wall murals, digital graphic designs and custom crafts — bringing bold creative vision to the Bay area.</p>
+              <p class="isbc-card-desc">Wall murals, digital graphic designs and custom crafts ,bringing bold creative vision to the Bay area.</p>
               <span class="isbc-badge open"><i class="fa-solid fa-circle"></i> Now Open</span>
             </div>
             <div class="isbc-card-foot"><a href="#" class="isbc-view-btn">View Business <i class="fa-solid fa-magnifying-glass"></i></a></div>
           </div>
 
           <div class="isbc-card">
-            <div class="isbc-card-img"><img src="https://picsum.photos/seed/shuttlebus/500/320" alt="Sunflower M3 Travel" draggable="false"></div>
+            <div class="isbc-card-img"><img src="members/sunf.jpg" alt="Sunflower M3 Travel" draggable="false"></div>
             <div class="isbc-card-body">
               <h3 class="isbc-card-name">Sunflower M3 Travel &amp; Shuttle</h3>
               <p class="isbc-card-desc">A family-owned shuttle and travel service based in the heart of Port Elizabeth, Eastern Cape.</p>
@@ -1035,7 +1036,7 @@ toggle.addEventListener('click', () => {
           </div>
 
           <div class="isbc-card">
-            <div class="isbc-card-img"><img src="https://picsum.photos/seed/radiostudio/500/320" alt="KingFisher FM" draggable="false"></div>
+            <div class="isbc-card-img"><img src="members/kfisher.jpg" alt="KingFisher FM" draggable="false"></div>
             <div class="isbc-card-body">
               <h3 class="isbc-card-name">KingFisher FM</h3>
               <p class="isbc-card-desc">Community radio station and proud media sponsor of the iBhayi Small Business Chamber.</p>
@@ -1044,18 +1045,10 @@ toggle.addEventListener('click', () => {
             <div class="isbc-card-foot"><a href="#" class="isbc-view-btn">View Business <i class="fa-solid fa-magnifying-glass"></i></a></div>
           </div>
 
-          <div class="isbc-card">
-            <div class="isbc-card-img"><img src="https://picsum.photos/seed/wellnessclinic/500/320" alt="Bay Health Solutions" draggable="false"></div>
-            <div class="isbc-card-body">
-              <h3 class="isbc-card-name">Bay Health Solutions</h3>
-              <p class="isbc-card-desc">Holistic health and wellness services for businesses and individuals across the Nelson Mandela Bay region.</p>
-              <span class="isbc-badge closed"><i class="fa-solid fa-circle"></i> Closed</span>
-            </div>
-            <div class="isbc-card-foot"><a href="#" class="isbc-view-btn">View Business <i class="fa-solid fa-magnifying-glass"></i></a></div>
-          </div>
+
 
           <div class="isbc-card">
-            <div class="isbc-card-img"><img src="https://picsum.photos/seed/techoffice/500/320" alt="PE Tech Solutions" draggable="false"></div>
+            <div class="isbc-card-img"><img src="members/stutta.jpg" alt="PE Tech Solutions" draggable="false"></div>
             <div class="isbc-card-body">
               <h3 class="isbc-card-name">PE Tech Solutions</h3>
               <p class="isbc-card-desc">IT support, software development and digital transformation for small businesses across the Eastern Cape.</p>
