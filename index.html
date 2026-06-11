@@ -191,33 +191,34 @@ nav {
   transform: scale(1.03);
 }
 
-@media (min-width: 768px) {
+
+    @media (min-width: 768px) {
   .menu-toggle {
     display: none;
   }
 
   .nav-links {
-  display: flex;
-  flex-direction: column;
-  background: #ffffff;
-  position: absolute;
-  top: 70px;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  visibility: hidden;
-  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-              opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-              visibility 0s linear 0.45s;
-}
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: static;
+    background: transparent;
+    opacity: 1;
+    visibility: visible;
+    max-height: none;
+    grid-template-rows: unset;
+    overflow: visible;
+    transition: none;
+  }
+
+  .nav-links > * {
+    overflow: visible;
+  }
 
   .nav-links a:not(.nav-cta) {
     margin: 0;
-    padding: 0 18px;
-    color: #ffffff;
+    padding: 0 16px;
+    color: #02162e;
     border-bottom: none;
     font-size: 0.85rem;
   }
@@ -227,12 +228,12 @@ nav {
   }
 
   .nav-links a:not(.nav-cta):hover {
-    color: #ffffff;
-    opacity: 0.75;
+    color: #5e954c;
+    opacity: 1;
   }
 
   .nav-cta-wrap {
-    padding: 0 0 0 18px;
+    padding: 0 0 0 16px;
   }
 
   .nav-cta {
@@ -350,11 +351,11 @@ toggle.addEventListener('click', () => {
 
   .hero-tag {
     display: inline-block;
-    font-size: 0.7rem;
+    font-size: 0.5rem;
     font-weight: 600;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: rgba(200, 170, 255, 0.65);
+    color: #5e954c85;
     margin-bottom: 20px;
     opacity: 0;
     transform: translateY(10px);
@@ -381,7 +382,7 @@ toggle.addEventListener('click', () => {
   .hero-sub {
     margin-top: 18px;
     font-size: clamp(0.88rem, 1.4vw, 1rem);
-    color: rgba(220, 210, 255, 0.6);
+    color: rgba(233, 233, 233, 0.732);
     font-weight: 400;
     max-width: 440px;
     line-height: 1.65;
@@ -460,29 +461,27 @@ toggle.addEventListener('click', () => {
 
 
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-
-
-
-  <div class="hero-inner">
-    <p class="hero-tag"></p>
-
-    <h1 class="hero-h">
-      Tech that clears the noise<br>
-      to focus on what matters:<br>
-      <em>you.</em>
-    </h1>
-
-    <p class="hero-sub">
-      Cut through complexity. Tools built around how you actually work, not the other way around.
-    </p>
-
-    <a href="#" class="hero-cta">
-      Become A Member <i class="fa-solid fa-user-group"> </i>
-    </a>
-  </div>
-</section>
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+  
+    <div class="hero-inner">
+      <p class="hero-tag">Nelson Mandela Bay's Small Business Chamber</p>
+  
+      <h1 class="hero-h">
+        The BIG voice<br>
+        of small business<br>
+        <em>in the Bay.</em>
+      </h1>
+  
+      <p class="hero-sub">
+        Join a growing chamber of businesses across Nelson Mandela Bay, built to connect, support and champion the entrepreneurs driving our local economy.
+      </p>
+  
+      <a href="#" class="hero-cta">
+        Become A Member <i class="fa-solid fa-user-group"></i>
+      </a>
+    </div>
+  </section>
 
 
 
@@ -681,37 +680,39 @@ toggle.addEventListener('click', () => {
 
  <section class="about-us">
 
-  <div class="about">
-    <!-- LEFT -->
-    <div class="about__left">
-      <p class="about__label">About Us</p>
-      <h2 class="about__heading">
-        iBhayi <span class="green">Small Business</span><br>Chamber
-      </h2>
-      <div class="about__partner">
-        <span class="about__partner-text">Our Partner</span>
-        <img src="fnblogo.png" alt="FNB" class="about__partner-img" />
-      </div>
+    <div class="about">
+        <!-- LEFT -->
+        <div class="about__left">
+          <p class="about__label">About Us</p>
+          <h2 class="about__heading">
+            iBhayi <span class="green">Small Business</span><br>Chamber
+          </h2>
+          <div class="about__partner">
+            <span class="about__partner-text">Our Partner</span>
+            <img src="fnblogo.png" alt="FNB" class="about__partner-img" />
+          </div>
+        </div>
+    
+        <!-- DIVIDER -->
+        <div class="about__divider"></div>
+    
+        <!-- RIGHT -->
+        <div class="about__right">
+          <p class="about__body">
+            We are <span class="green">Gqeberha's</span> dedicated small business
+            chamber, committed to growing and empowering entrepreneurs across the
+            <span class="green">Nelson Mandela Bay</span> region. Founded on the
+            belief that small businesses are the backbone of our local economy, we
+            bring business owners together to <span class="green">network</span>,
+            collaborate and access the support they need to thrive. From
+            <span class="green">training opportunities</span> and business expos to
+            member perks and a platform that gives your business
+            <span class="green">real visibility.</span> ISBC exists to make sure
+            no small business in the Bay has to grow alone.
+          </p>
+        </div>
+    
     </div>
-
-    <!-- DIVIDER -->
-    <div class="about__divider"></div>
-
-    <!-- RIGHT -->
-    <div class="about__right">
-      <p class="about__body">
-        We are a <span class="green">small business chamber</span> dedicated to
-        supporting and uplifting entrepreneurs across the
-        <span class="green">Nelson Mandela Bay</span> region. Our mission is to
-        help small businesses <span class="green">network</span>, collaborate,
-        and access the resources they need to succeed. Whether you are just
-        starting out or looking to <span class="green">grow your business</span>,
-        we connect you with the right people, the right opportunities, and the
-        right support because every business deserves a
-        <span class="green">community</span> behind it.
-      </p>
-    </div>
-</div>
 
 </section>
 
@@ -987,90 +988,87 @@ toggle.addEventListener('click', () => {
 
 
 <section class="isbc-members">
-  <div class="isbc-wrap">
-
-    <div class="isbc-header">
-      <h2 class="isbc-title">The Businesses <span>Behind ISBC</span></h2>
-      <p class="isbc-subtitle">Meet the proud member businesses representing the Nelson Mandela Bay small business community.</p>
+    <div class="isbc-wrap">
+  
+      <div class="isbc-header">
+        <h2 class="isbc-title">The Businesses <span>Behind ISBC</span></h2>
+        <p class="isbc-subtitle">A growing community of small businesses across Nelson Mandela Bay, connected, supported and represented by the chamber.</p>
+      </div>
+  
+      <div class="isbc-slider-wrap">
+        <button class="isbc-nav-btn isbc-prev" id="isbcPrev" aria-label="Previous">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="isbc-nav-btn isbc-next" id="isbcNext" aria-label="Next">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+  
+        <div class="isbc-track-outer" id="isbcOuter">
+          <div class="isbc-track" id="isbcTrack">
+  
+            <div class="isbc-card">
+              <div class="isbc-card-img"><img src="members/wizedr.jpg" alt="Wizedrive Tracking" draggable="false"></div>
+              <div class="isbc-card-body">
+                <h3 class="isbc-card-name">Wizedrive Tracking</h3>
+                <p class="isbc-card-desc">Real-time GPS fleet tracking solutions helping businesses across the Eastern Cape manage and protect their vehicles.</p>
+                <span class="isbc-badge open"><i class="fa-solid fa-circle"></i> Now Open</span>
+              </div>
+              <div class="isbc-card-foot"><a href="#" class="isbc-view-btn">View Business <i class="fa-solid fa-magnifying-glass"></i></a></div>
+            </div>
+  
+            <div class="isbc-card">
+              <div class="isbc-card-img"><img src="members/annip.png" alt="AnniP Art" draggable="false"></div>
+              <div class="isbc-card-body">
+                <h3 class="isbc-card-name">AnniP Art</h3>
+                <p class="isbc-card-desc">Custom wall murals, digital graphic designs and handcrafted artwork serving clients across the Nelson Mandela Bay area.</p>
+                <span class="isbc-badge open"><i class="fa-solid fa-circle"></i> Now Open</span>
+              </div>
+              <div class="isbc-card-foot"><a href="#" class="isbc-view-btn">View Business <i class="fa-solid fa-magnifying-glass"></i></a></div>
+            </div>
+  
+            <div class="isbc-card">
+              <div class="isbc-card-img"><img src="members/sunf.jpg" alt="Sunflower M3 Travel" draggable="false"></div>
+              <div class="isbc-card-body">
+                <h3 class="isbc-card-name">Sunflower M3 Travel &amp; Shuttle</h3>
+                <p class="isbc-card-desc">A family-owned transport business offering reliable shuttle and travel services in and around Port Elizabeth.</p>
+                <span class="isbc-badge closed"><i class="fa-solid fa-circle"></i> Closed</span>
+              </div>
+              <div class="isbc-card-foot"><a href="#" class="isbc-view-btn">View Business <i class="fa-solid fa-magnifying-glass"></i></a></div>
+            </div>
+  
+            <div class="isbc-card">
+              <div class="isbc-card-img"><img src="members/kfisher.jpg" alt="KingFisher FM" draggable="false"></div>
+              <div class="isbc-card-body">
+                <h3 class="isbc-card-name">KingFisher FM</h3>
+                <p class="isbc-card-desc">Gqeberha's community radio station and official media sponsor of the iBhayi Small Business Chamber.</p>
+                <span class="isbc-badge open"><i class="fa-solid fa-circle"></i> Now Open</span>
+              </div>
+              <div class="isbc-card-foot"><a href="#" class="isbc-view-btn">View Business <i class="fa-solid fa-magnifying-glass"></i></a></div>
+            </div>
+  
+            <div class="isbc-card">
+                <div class="isbc-card-img"><img src="members/stutta.jpg" alt="Stuttaford Van Lines" draggable="false"></div>
+                <div class="isbc-card-body">
+                  <h3 class="isbc-card-name">Stuttaford Van Lines</h3>
+                  <p class="isbc-card-desc">Specialists in furniture removals, storage, full packing and transportation of household goods domestically across South Africa.</p>
+                  <span class="isbc-badge open"><i class="fa-solid fa-circle"></i> Now Open</span>
+                </div>
+                <div class="isbc-card-foot"><a href="#" class="isbc-view-btn">View Business <i class="fa-solid fa-magnifying-glass"></i></a></div>
+              </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="isbc-progress-track">
+        <div class="isbc-progress-fill" id="isbcFill"></div>
+      </div>
+  
+      <div class="isbc-cta-wrap">
+        <a href="#apply" class="isbc-cta-btn">Become A Member <i class="fa-solid fa-user-group"></i></a>
+      </div>
+  
     </div>
-
-    <div class="isbc-slider-wrap">
-      <button class="isbc-nav-btn isbc-prev" id="isbcPrev" aria-label="Previous">
-        <i class="fa-solid fa-chevron-left"></i>
-      </button>
-      <button class="isbc-nav-btn isbc-next" id="isbcNext" aria-label="Next">
-        <i class="fa-solid fa-chevron-right"></i>
-      </button>
-
-      <div class="isbc-track-outer" id="isbcOuter">
-        <div class="isbc-track" id="isbcTrack">
-
-          <div class="isbc-card">
-            <div class="isbc-card-img"><img src="members/wizedr.jpg" alt="Wizedrive Tracking" draggable="false"></div>
-            <div class="isbc-card-body">
-              <h3 class="isbc-card-name">Wizedrive Tracking</h3>
-              <p class="isbc-card-desc">Real-time GPS fleet tracking technology providing superior products and services across the Eastern Cape.</p>
-              <span class="isbc-badge open"><i class="fa-solid fa-circle"></i> Now Open</span>
-            </div>
-            <div class="isbc-card-foot"><a href="#" class="isbc-view-btn">View Business <i class="fa-solid fa-magnifying-glass"></i></a></div>
-          </div>
-
-          <div class="isbc-card">
-            <div class="isbc-card-img"><img src="members/annip.png" alt="AnniP Art" draggable="false"></div>
-            <div class="isbc-card-body">
-              <h3 class="isbc-card-name">AnniP Art</h3>
-              <p class="isbc-card-desc">Wall murals, digital graphic designs and custom crafts ,bringing bold creative vision to the Bay area.</p>
-              <span class="isbc-badge open"><i class="fa-solid fa-circle"></i> Now Open</span>
-            </div>
-            <div class="isbc-card-foot"><a href="#" class="isbc-view-btn">View Business <i class="fa-solid fa-magnifying-glass"></i></a></div>
-          </div>
-
-          <div class="isbc-card">
-            <div class="isbc-card-img"><img src="members/sunf.jpg" alt="Sunflower M3 Travel" draggable="false"></div>
-            <div class="isbc-card-body">
-              <h3 class="isbc-card-name">Sunflower M3 Travel &amp; Shuttle</h3>
-              <p class="isbc-card-desc">A family-owned shuttle and travel service based in the heart of Port Elizabeth, Eastern Cape.</p>
-              <span class="isbc-badge closed"><i class="fa-solid fa-circle"></i> Closed</span>
-            </div>
-            <div class="isbc-card-foot"><a href="#" class="isbc-view-btn">View Business <i class="fa-solid fa-magnifying-glass"></i></a></div>
-          </div>
-
-          <div class="isbc-card">
-            <div class="isbc-card-img"><img src="members/kfisher.jpg" alt="KingFisher FM" draggable="false"></div>
-            <div class="isbc-card-body">
-              <h3 class="isbc-card-name">KingFisher FM</h3>
-              <p class="isbc-card-desc">Community radio station and proud media sponsor of the iBhayi Small Business Chamber.</p>
-              <span class="isbc-badge open"><i class="fa-solid fa-circle"></i> Now Open</span>
-            </div>
-            <div class="isbc-card-foot"><a href="#" class="isbc-view-btn">View Business <i class="fa-solid fa-magnifying-glass"></i></a></div>
-          </div>
-
-
-
-          <div class="isbc-card">
-            <div class="isbc-card-img"><img src="members/stutta.jpg" alt="PE Tech Solutions" draggable="false"></div>
-            <div class="isbc-card-body">
-              <h3 class="isbc-card-name">PE Tech Solutions</h3>
-              <p class="isbc-card-desc">IT support, software development and digital transformation for small businesses across the Eastern Cape.</p>
-              <span class="isbc-badge open"><i class="fa-solid fa-circle"></i> Now Open</span>
-            </div>
-            <div class="isbc-card-foot"><a href="#" class="isbc-view-btn">View Business <i class="fa-solid fa-magnifying-glass"></i></a></div>
-          </div>
-
-        </div><!-- /isbc-track -->
-      </div><!-- /isbc-track-outer -->
-    </div><!-- /isbc-slider-wrap -->
-
-    <div class="isbc-progress-track">
-      <div class="isbc-progress-fill" id="isbcFill"></div>
-    </div>
-
-    <div class="isbc-cta-wrap">
-      <a href="#apply" class="isbc-cta-btn">Become A Member <i class="fa-solid fa-user-group"></i></a>
-    </div>
-
-  </div>
-</section>
+  </section>
 
 <script>
 (function () {
@@ -1428,9 +1426,9 @@ toggle.addEventListener('click', () => {
     <div class="hw-wrap">
   
       <div class="hw-intro">
-        <h1>How we invest</h1>
-        <p>Our academically driven approach guides us at every point in the investment process. It enables us to focus on financial science to build strategies that emphasise factors of the market that research shows have delivered higher returns over time.</p>
-        <a href="#" class="hw-btn">Our investment philosophy</a>
+        <h1>How ISBC supports your business</h1>
+        <p>We help local businesses grow through networking, exposure, collaboration and strategic opportunities connecting entrepreneurs across Nelson Mandela Bay with the right people, the right platforms and the right support.</p>
+     
       </div>
   
       <div class="hw-grid">
@@ -1443,8 +1441,8 @@ toggle.addEventListener('click', () => {
             <line x1="220" y1="180" x2="110" y2="120" stroke="#c0392b" stroke-width="1"/>
             <line x1="220" y1="180" x2="155" y2="155" stroke="#c0392b" stroke-width="1"/>
           </svg>
-          <h2>Research</h2>
-          <p>The funds we deploy apply rigorous research, leveraging academic insights and quantitative models to uncover market inefficiencies and identify robust investment opportunities.</p>
+          <h2>Networking</h2>
+          <p>Connect with fellow entrepreneurs at business breakfasts, Power Hour sessions, expos and networking events designed to build real relationships and open new doors for your business.</p>
         </div>
   
         <div class="hw-card">
@@ -1455,8 +1453,8 @@ toggle.addEventListener('click', () => {
             <line x1="220" y1="180" x2="110" y2="120" stroke="#c0392b" stroke-width="1"/>
             <line x1="220" y1="180" x2="155" y2="155" stroke="#c0392b" stroke-width="1"/>
           </svg>
-          <h2>Application</h2>
-          <p>Next, we apply these insights by constructing diversified portfolios tailored to each client's specific goals and risk profile, ensuring alignment with long-term financial objectives.</p>
+          <h2>Exposure</h2>
+          <p>Get your business seen. Members are showcased across ISBC platforms, events and our business directory — putting your brand in front of the right audience in the Nelson Mandela Bay area.</p>
         </div>
   
         <div class="hw-card">
@@ -1467,8 +1465,8 @@ toggle.addEventListener('click', () => {
             <line x1="220" y1="180" x2="110" y2="120" stroke="#c0392b" stroke-width="1"/>
             <line x1="220" y1="180" x2="155" y2="155" stroke="#c0392b" stroke-width="1"/>
           </svg>
-          <h2>Implementation</h2>
-          <p>Finally, we focus on meticulous implementation, utilising bespoke technology and best practice to execute strategies tax-efficiently and cost-effectively for superior outcomes.</p>
+          <h2>Membership Benefits</h2>
+          <p>Unlock exclusive member perks including discounted advertising on KingFisher FM, access to business resources, referral opportunities and a community of entrepreneurs invested in each other's success.</p>
         </div>
   
         <div class="hw-card">
@@ -1479,8 +1477,8 @@ toggle.addEventListener('click', () => {
             <line x1="220" y1="180" x2="110" y2="120" stroke="#c0392b" stroke-width="1"/>
             <line x1="220" y1="180" x2="155" y2="155" stroke="#c0392b" stroke-width="1"/>
           </svg>
-          <h2>Monitoring</h2>
-          <p>We continuously monitor every portfolio, rebalancing positions as markets evolve to ensure your strategy remains on track, risk-controlled, and aligned with your goals at every stage.</p>
+          <h2>Growth & Development</h2>
+          <p>Access workshops, training opportunities and strategic guidance built for small business owners — giving you the skills, knowledge and support to scale your business sustainably in a competitive market.</p>
         </div>
   
       </div>
@@ -1553,19 +1551,19 @@ toggle.addEventListener('click', () => {
       </style>
  
     
-      <section class="best-worlds-section">
-    
-        <div class="content">
-     
-    
-          <p>
-            Throughout our journey we have listened to and worked with thousands of families to help them live their best life.
-          </p>
-    
-          <a href="#" class="discover-btn">Contact us</a>
-        </div>
-    
-      </section>
+ <section class="best-worlds-section">
+
+    <div class="content">
+  
+      <p>
+        Since our founding we have connected, supported and championed hundreds of small businesses across Nelson Mandela Bay  and we are just getting started.
+      </p>
+  
+      <a href="#apply" class="discover-btn">Contact Us</a>
+  
+    </div>
+  
+  </section>
   
 
 
